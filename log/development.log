@@ -1,0 +1,16 @@
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-06 13:15:01 +0200
+
+ActionController::RoutingError (No route matches [GET] "/"):
+  
+
+Rendered /home/sedzen/.rvm/gems/ruby-1.9.3-p0@eye/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-06 13:17:02 +0200
+
+ActionController::RoutingError (No route matches [GET] "/"):
+  
+
+Rendered /home/sedzen/.rvm/gems/ruby-1.9.3-p0@eye/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
