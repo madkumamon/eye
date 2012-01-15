@@ -1,0 +1,14 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.active= link_to "Comments", "#"
+  .content
+    .inner
+      %br
+      - @comments.each do |comment|
+        #footer
+          .block{:style => "background-color: gray;"}
+            %p{:style => "background-color: gray;"}
+              %strong
+                = "#{comment.user.email} said:"
+              = comment.message

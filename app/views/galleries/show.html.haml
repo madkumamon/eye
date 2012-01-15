@@ -1,0 +1,35 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first= link_to "Back", category_galleries_path(@gallery.category.title)
+      %li.active= link_to "Current", category_gallery_path
+  .content
+    .inner
+      .content
+        .inner
+          %br
+          %center
+            = image_tag(@gallery.image)
+            .clear
+            %br
+            = link_to "Like", like_path(@gallery.id), :class => "button", :style => "float: none; display:inline"
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first= link_to "Comments", "#"
+  .content
+    .inner
+      = form_for :comment, :url => category_gallery_comments_path(@gallery.category.title, @gallery.id) do |f|
+        %p
+          = f.text_area :message, :style => "width: 100%; height:100px"
+        %p
+          = f.submit "Save"
+  .content
+    .inner
+      - @gallery.comments.includes(:user).each do |comment|
+        #footer
+          .block{:style => "background-color: gray;"}
+            %p{:style => "background-color: gray;"}
+              %strong
+                = "#{comment.user.email} said:"
+              = comment.message

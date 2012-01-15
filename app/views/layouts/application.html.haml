@@ -13,17 +13,22 @@
         #user-navigation
           %ul.wat-cf
             %li
-              %a{:href => "#"}= t("web-app-theme.profile", :default => "Profile")
-            %li
-              %a{:href => "#"}= t("web-app-theme.settings", :default => "Settings")
+              Signed in as
+            %li.login
+              - if user_signed_in?
+                #{current_user.email}
             %li
               = link_to t("web-app-theme.logout", :default => "Logout"), destroy_user_session_path, :method => :delete
         #main-navigation
-          -#%ul.wat-cf
-          -#  %li{ :class => (params[:controller] == "home" ? "first active" : "first") }
-          -#    = link_to "Home", root_path
-          -#  %li{ :class => (params[:controller] == "blog_entries" ? "active" : nil) }
-          -#    = link_to "Blog Entries", blog_entries_path
+          %ul.wat-cf
+            %li{ :class => (params[:controller] == "categories" ? "first active" : "first") }
+              = link_to "Categories", categories_path
+            %li{ :class => (params[:controller] == "galleries" ? "active" : nil) }
+              = link_to "Images", all_img_path
+            %li{ :class => (params[:controller] == "comments" ? "active" : nil) }
+              = link_to "Comments", comments_path
+            -#%li
+              -#= link_to "Events", events_path
       #wrapper.wat-cf
         .flash
           - flash.each do |type, message|

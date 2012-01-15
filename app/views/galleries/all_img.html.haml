@@ -1,0 +1,18 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.active= link_to "Current", all_img_path
+  .content
+    .inner
+      .content
+        .inner
+          %br
+          - @galleries.each do |img|
+            = link_to category_gallery_path(img.id) do
+              %div{:style => "float:left;margin-right: 30px"}
+                %p= "Like: #{img.likes_count.to_i}"
+                %p= "Comments: #{img.comments_count.to_i}"
+                %p= image_tag img.image(:thumb)
+          .clear
+      = will_paginate @galleries
+      .clear

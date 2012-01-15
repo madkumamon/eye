@@ -114,14 +114,25 @@ hr {
 #main-navigation ul li {
   padding-left: 20px;
   margin-right: 0;
+
+}
+
+#main-navigation ul li a:hover {
+  background-color: #424242;
+  border-radius: 15px;
+    padding: 10px;
 }
 #main-navigation ul li a:link, #main-navigation ul li a:visited, #main-navigation ul li a:hover, #main-navigation ul li a:active {
-  padding: 8px 0;
+  /*padding: 8px 0;*/
+    padding: 10px;
   text-decoration: none;
-  color: #eeeeee;
+  color: #a4a4a4;
 }
 #main-navigation ul li.active a:link, #main-navigation ul li.active a:visited, #main-navigation ul li.active a:hover, #main-navigation ul li.active a:active {
-  color: #a4a4a4;
+  color: #eeeeee;
+  background-color: #afafaf;
+  border-radius: 15px;
+    padding: 10px;
 }
 
 .secondary-navigation {
@@ -460,4 +471,9 @@ a.button:active, button.button:active {
 .login div.right, .signup div div.right {
   width: 74%;
   float: right;
+}
+
+#user-navigation ul li.login{
+  background-color: #afafaf;
+  border-radius: 15px;
 }

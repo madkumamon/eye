@@ -23,6 +23,6 @@
             %td
               = category.created_at.to_s(:short)
             %td.last
-              = link_to "#{t("web-app-theme.show", :default => "Show")}", category_pictures_path(category.title)
+              = link_to "#{t("web-app-theme.show", :default => "Show")}", category_galleries_path(category.title)
       .actions-bar.wat-cf
         .actions
