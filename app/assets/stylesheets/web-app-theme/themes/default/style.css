@@ -477,3 +477,26 @@ a.button:active, button.button:active {
   background-color: #afafaf;
   border-radius: 15px;
 }
+
+.comment .login{
+    float: left;
+    padding: 5px;
+    background-color: #b9b9b9;
+    border-radius: 5px 0 5px 0;
+    text-shadow: none;
+}
+
+.comment p{
+ padding: 20px 10px 10px 25px;
+ margin: 0px;
+}
+
+.comment{
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 1.45em;
+    border-radius: 5px;
+    background-color: #e5e3e3;
+    margin: 10px 0 10px 0;
+}
+

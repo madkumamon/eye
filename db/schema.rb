@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(:version => 20120110172924) do
 
   create_table "comments", :force => true do |t|
     t.text     "message"
+    t.integer  "gallery_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -34,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20120110172924) do
   end
 
   create_table "galleries", :force => true do |t|
+    t.integer  "category_id"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -44,6 +47,8 @@ ActiveRecord::Schema.define(:version => 20120110172924) do
   end
 
   create_table "likes", :force => true do |t|
+    t.integer  "gallery_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
