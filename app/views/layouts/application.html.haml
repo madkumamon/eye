@@ -18,7 +18,7 @@
               - if user_signed_in?
                 #{current_user.email}
             %li
-              = link_to t("web-app-theme.logout", :default => "Logout"), destroy_user_session_path, :method => :delete
+              = link_to t("web-app-theme.logout", :default => "Logout"), destroy_user_session_path, :method => :delete, :class => 'logout'
         #main-navigation
           %ul.wat-cf
             %li{ :class => (params[:controller] == "categories" ? "first active" : "first") }
