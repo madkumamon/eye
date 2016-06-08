@@ -27,8 +27,8 @@
               = link_to "Images", all_img_path
             %li{ :class => (params[:controller] == "comments" ? "active" : nil) }
               = link_to "Comments", comments_path
-            -#%li
-              -#= link_to "Events", events_path
+            %li{ :class => (params[:controller] == "events" ? "active" : nil) }
+              = link_to "Events", events_path
       #wrapper.wat-cf
         .flash
           - flash.each do |type, message|

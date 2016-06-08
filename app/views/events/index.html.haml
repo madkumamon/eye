@@ -1,0 +1,25 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first.active= link_to "Current", events_path
+  .content
+    %h2.title
+      All Events
+    .inner
+      %table.table
+        %tr
+          %th.first User
+          %th navigation
+          %th sign in
+          %th sign out
+          %th comments
+          %th likes
+          %th.last &nbsp;
+        - @events.each do |e|
+          %tr{:class => cycle("odd", "even")}
+            %td= e.user
+            - %w(user-navigation user-sign_in user-sign_out comment-added like-added).each do |name|
+              %td= link_to "Show", event_path(name, :user => e.user)
+            %td.last
+      .actions-bar.wat-cf
+        .actions

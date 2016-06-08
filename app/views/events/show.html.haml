@@ -1,0 +1,25 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first.first= link_to "Back", events_path
+      %li.first.active= link_to "Current", "#"
+  .content
+    %h2.title
+      = @user
+      = "- >"
+      = @name
+    .inner
+      %table.table
+        %tr
+          %th.first ID
+          %th Name
+          %th Body
+          %th.last created_at
+        - @event.each do |e|
+          %tr{:class => cycle("odd", "even")}
+            %td= e.id
+            %td= e.name
+            %td= e.body
+            %td.last= e.created_at.to_s(:short)
+      .actions-bar.wat-cf
+        .actions

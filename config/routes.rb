@@ -1,5 +1,7 @@
 Eye::Application.routes.draw do
   devise_for :users
+  resources :events, :only => [:index, :show]
+  resources :comments, :only => :index
 
   resources :categories, :only => :index do
     resources :galleries, :only => [:index,:show], :path => "" do
@@ -7,7 +9,6 @@ Eye::Application.routes.draw do
     end
   end
 
-  resources :comments, :only => :index
 
   root :to => redirect('/categories')
 
